@@ -52,10 +52,8 @@ router.post("/resume", async (req, res) => {
     // Initial setup, create credentials instance
     const credentials =
       PDFServicesSdk.Credentials.servicePrincipalCredentialsBuilder()
-        // .withClientId(process.env.PDF_SERVICES_CLIENT_ID)
-        // .withClientSecret(process.env.PDF_SERVICES_CLIENT_SECRET)
-        .withClientId("230941260030493fb52615354dea6bf1")
-        .withClientSecret("p8e-ORn1AIjI1hu-bgRmj1ExMCrjaQxQhDZv")
+        .withClientId(process.env.PDF_SERVICES_CLIENT_ID)
+        .withClientSecret(process.env.PDF_SERVICES_CLIENT_SECRET)
         .build();
 
     // Extract the form data from the request body
