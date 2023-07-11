@@ -25,6 +25,25 @@ This will start a server at `localhost:8080/resume` , go to the server.
 You will see three different formats of resume to choose from.
 Select one of the format, fill your details in the form and click on Submit.
 
-Waitfor few seconds while your API keys are being verified by Adobe's servers and the PDF is being generated.
+Wait for few seconds while your API keys are being verified by Adobe's servers and the PDF is being generated.
 
-The final Resume will be present in the `output`directory.
+The final Resume will be present in the `output` directory.
+
+## Method 2: Resume Builder API
+`app.js` provides the primary API endpoint, which can handle requests using various methods such as HTTP GET requests and Curl requests.
+
+Run the following command in your terminal
+```
+npm start
+```
+This will input a curl request in another terminal window, port set at localhost:8080/resume, and will directly output a `.pdf` file inside the output directory.
+
+The final Resume will be present in the `output` directory.
+
+# Project Structure
+`templates` - contains .docx files of sample templates. <br><br>
+`static` - contains images, .js and .css files for UI component of the project. <br><br>
+`views` - contains .ejs files <br><br>
+`src` - contains modularized code files <br><br>
+`sampleoutput` - stores some sample generated resumes. <br><br>
+`output` - stores all the generated resumes
