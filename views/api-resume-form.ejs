@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  
+</head>
+<body>
+  <h1>Resume Builder</h1>
+  <div class="template-options">
+    <div class="template-option" id="templateOption1" onclick="selectTemplate('1')">
+      <img class="template-image" src="<%=templateOptions[0].image %>" alt="Template 1">
+    </div>
+    <div class="template-option" id="templateOption2" onclick="selectTemplate('2')">
+      <img class="template-image" src="<%=templateOptions[1].image %>" alt="Template 2">
+    </div>
+    <div class="template-option" id="templateOption3" onclick="selectTemplate('3')">
+      <img class="template-image" src="<%=templateOptions[2].image %>" alt="Template 3">
+    </div>
+  </div>
+  
+  <form id="resumeForm" action="/resume" method="POST">
+    <input type="hidden" id="template_id" name="template_id" value="">
+    
+    <div class="section">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="personal_information[name]" required>
+    </div>
+    <div class="section">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="personal_information[last_name]" required>
+    </div>
+    <div class="section">
+      <label for="emailAddress">Email Address:</label>
+      <input type="email" id="emailAddress" name="personal_information[email_address]" required>
+    </div>
+    <div class="section">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" name="personal_information[phone_number]" required>
+    </div>
+    <div class="section">
+      <label for="linkedinUrl">LinkedIn URL:</label>
+      <input type="text" id="linkedinUrl" name="personal_information[linkedin_url]" required>
+    </div>
+    <div class="section">
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="jobTitle" name="job_title" required>
+    </div>
+    <div class="section">
+      <label for="careerObjective">About: </label>
+      <textarea id="careerObjective" name="career_objective" required></textarea>
+    </div>
+    <div class="section">
+      <label for="skills">Skills:</label>
+      <div id="skillsContainer">
+        <input type="text" id="skills" name="skills[]" required>
+      </div>
+      <button type="button" id="addSkillButton" onclick="addSkill()">Add Skill</button>
+    </div>
+
+    <div id="educationContainer" class="section">
+      <h3>Education</h3>
+      <div id="educationItemsContainer"></div>
+
+      <button type="button" id="addEducationButton" onclick="addEducation()">Add Education</button>
+    </div>
+
+    <div id="experienceContainer" class="section">
+      <h3>Experience</h3>
+      <div id="experienceItemsContainer"></div>
+      <button type="button" id="addExperienceButton" onclick="addExperience()">Add Experience</button>
+    </div>
+
+    <div id="achievementsContainer" class="section">
+      <h3>Achievements</h3>
+      <div id="achievementItemsContainer"></div>
+      <button type="button" id="addAchievementButton" onclick="addAchievement()">Add Achievement</button>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script src="js/script.js"></script>
+</body>
+</html>
